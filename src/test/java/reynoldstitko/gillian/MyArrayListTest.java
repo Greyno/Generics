@@ -43,7 +43,7 @@ public class MyArrayListTest {
     }
 
     @Test
-    public void add2Test(){
+    public void addInsertElementAtIndexTest(){
         myArr.add("a");
         myArr.add("b");
         myArr.add("c");
@@ -52,6 +52,16 @@ public class MyArrayListTest {
         System.out.println(myArr.toString());
         String actual = myArr.get(0);
         assertSame("Expected", "e", actual);
+    }
+
+    @Test
+    public void setTest(){
+        myArr.add("a");
+        myArr.add("b");
+        myArr.add("c");
+        myArr.add("d");
+        myArr.set(2, "e");
+        assertEquals("e", myArr.get(2));
     }
 
     @Test
@@ -85,6 +95,30 @@ public class MyArrayListTest {
         myArr.clear();
         System.out.println(myArr);
         assertTrue(myArr.isEmpty());
+    }
+
+    @Test
+    public void containsTest(){
+        myArr.add("a");
+        myArr.add("b");
+        myArr.add("c");
+        myArr.add("d");
+        boolean expected = true;
+        myArr.contains("c");
+        System.out.println(myArr);
+        assertEquals("Expected equal", "c", myArr.contains("c"));
+    }
+
+    @Test
+    public void removeTest(){
+        myArr.add("a");
+        myArr.add("b");
+        myArr.add("c");
+        myArr.add("d");
+        myArr.remove(2);
+        boolean expected = false;
+        myArr.contains("c");
+        assertEquals("Expected equal", expected, myArr.contains("c"));
     }
 
 

@@ -51,40 +51,27 @@ public class MyArrayList<T> {
 
         T[] finalArray = (T[]) new Object[myArr.length + 1];
 
+
         //Break the array into two parts, using a function accessible to Arrays (copyOfRange)
 
-        int arrayLength = myArr.length;
+        T[] brokenLeft = breakLeftArray(myArr, insertAtIndex);
 
-        for (int i = arrayLength - 1; i > insertAtIndex; i--) {
-            myArr[arrayLength] = myArr[i];
-            arrayLength = arrayLength - 1;
-        }
-        myArr[insertAtIndex] = elementToInsert;
+        add(elementToInsert);
 
-//        myArr[insertAtIndex] = elementToInsert;
-
-//        T[] broken = breakArrays(myArr, insertAtIndex);
-//
-//        T[] tempLeft = Arrays.copyOfRange(myArr, 0, insertAtIndex-1);
-//        T[] tempRight = Arrays.copyOfRange(myArr, insertAtIndex, myArr.length);
-//
-//        //add(elementToInsert);
-//        T[] newLeftArray = (T[]) new Object[tempLeft.length + 1];
-//        for(int i = 0; i < tempLeft.length; i++){
-//            tempLeft[i] = myArr[i];
-//        }
+        T[] brokenRight = breakRightArray(myArr, insertAtIndex+1);
 
         //combine both arrays again
 
-
-//        Arrays.fill(myArr, insertAtIndex, insertAtIndex+1, elementToInsert);
-//        Arrays.fill(myArr, insertAtIndex, insertAtIndex+1, elementToInsert);
     }
 
-    private T[] breakArrays(T[] array, int atLocation){
+    private T[] breakLeftArray(T[] array, int atLocation){
         T[] tempLeft = Arrays.copyOfRange(myArr, 0, atLocation-1);
-        T[] tempRight = Arrays.copyOfRange(myArr, atLocation, myArr.length);
         return tempLeft;
+    }
+
+    private T[] breakRightArray(T[] array, int atLocation){
+        T[] tempRight = Arrays.copyOfRange(myArr, atLocation, myArr.length);
+        return tempRight;
     }
 
     //Returns the element at the specified position in this list
@@ -92,19 +79,36 @@ public class MyArrayList<T> {
         return myArr[value];
     }
 
-
     //Removes the element at the specified location in the list
     public void remove(int removalIndex){
-        for(int i = 0; i < myArr.length; i++){
-            if
-        }
 
+        //Can't figure this out so I tried this method from here:
+        // http://stackoverflow.com/questions/35880131/creating-an-array-list-from-scratch
+
+        if (removalIndex < 0 || removalIndex >= myArr.length) return;
+        T[] temp = (T[]) new Object[myArr.length - 1];
+
+        boolean found = false;
+        // copy everything over to the new element
+        for (int i = 0; i < myArr.length; i++)
+        {
+            // don't copy if the indices are the same
+            if (i == removalIndex)
+            {
+                found = true;
+                continue;
+            }
+            temp[i - (found ? 1 : 0)] = myArr[i];
+        }
+        myArr = temp;
     }
 
     //Replaces the element at the specified position in this list with the specified element.
     public void set(int indexLocation, T itemToReplace){
 
-    }
+        //Use a function accessible to Arrays (fill)
+        Arrays.fill(myArr, indexLocation, indexLocation+1, itemToReplace);
+        }
 
     //Removes all of the elements from this list.
     public void clear(){
@@ -124,6 +128,9 @@ public class MyArrayList<T> {
 
     //Returns true if this list contains the specified element
     public boolean contains(T item){
+        if(myArr.equals(item)){
+            return true;
+        } else
         return false;
     }
 
