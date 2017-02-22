@@ -19,6 +19,7 @@ public class MyArrayList<T> {
 
     //Create a one-arg constructor
     public MyArrayList(int startingIndex) {
+        myArr = (T[]) new Object[startingIndex];
     }
 
     //Create another constructor
@@ -28,8 +29,8 @@ public class MyArrayList<T> {
 
     //Appends the specified element to the end of the list.
     public void add(T element){
-        //Since Arrays cannot add an element, will need to copy the array into one that is 1 size larger than
-        //the original array
+        //Since Arrays cannot add an element, will need to copy the array into one that is
+        // 1 size larger than the original array
 
         //Create an array that is 1 larger than the current array
         T[] newArray = (T[]) new Object[myArr.length + 1];
@@ -39,7 +40,6 @@ public class MyArrayList<T> {
             newArray[i] = myArr[i];
         }
 
-        System.out.println(myArr.length);
         //Add the element to the new array
         newArray[myArr.length] = element;
         myArr = newArray; //can now access the new, resized array through get methods
@@ -47,18 +47,44 @@ public class MyArrayList<T> {
     }
 
     //Inserts the specified element at the specified position in this list.
-    public void add(int insertAtIndex, T elementToInsert){
+    public void add(int insertAtIndex, T elementToInsert) {
+
+        T[] finalArray = (T[]) new Object[myArr.length + 1];
 
         //Break the array into two parts, using a function accessible to Arrays (copyOfRange)
 
-        T[] tempLeft = Arrays.copyOfRange(myArr, 0, insertAtIndex-1);
-        T[] tempRight = Arrays.copyOfRange(myArr, insertAtIndex, myArr.length);
+        int arrayLength = myArr.length;
 
-        add(elementToInsert);
-        T[] newArray = (T[]) new Object[tempLeft.length + 1];
+        for (int i = arrayLength - 1; i > insertAtIndex; i--) {
+            myArr[arrayLength] = myArr[i];
+            arrayLength = arrayLength - 1;
+        }
+        myArr[insertAtIndex] = elementToInsert;
+
+//        myArr[insertAtIndex] = elementToInsert;
+
+//        T[] broken = breakArrays(myArr, insertAtIndex);
+//
+//        T[] tempLeft = Arrays.copyOfRange(myArr, 0, insertAtIndex-1);
+//        T[] tempRight = Arrays.copyOfRange(myArr, insertAtIndex, myArr.length);
+//
+//        //add(elementToInsert);
+//        T[] newLeftArray = (T[]) new Object[tempLeft.length + 1];
+//        for(int i = 0; i < tempLeft.length; i++){
+//            tempLeft[i] = myArr[i];
+//        }
+
+        //combine both arrays again
 
 
+//        Arrays.fill(myArr, insertAtIndex, insertAtIndex+1, elementToInsert);
+//        Arrays.fill(myArr, insertAtIndex, insertAtIndex+1, elementToInsert);
+    }
 
+    private T[] breakArrays(T[] array, int atLocation){
+        T[] tempLeft = Arrays.copyOfRange(myArr, 0, atLocation-1);
+        T[] tempRight = Arrays.copyOfRange(myArr, atLocation, myArr.length);
+        return tempLeft;
     }
 
     //Returns the element at the specified position in this list
@@ -69,6 +95,9 @@ public class MyArrayList<T> {
 
     //Removes the element at the specified location in the list
     public void remove(int removalIndex){
+        for(int i = 0; i < myArr.length; i++){
+            if
+        }
 
     }
 
@@ -79,14 +108,18 @@ public class MyArrayList<T> {
 
     //Removes all of the elements from this list.
     public void clear(){
-        for(int i = 0; i<myArr.length; i++){
+        for(int i = 0; i < myArr.length; i++){
             remove(i);
         }
+        System.out.println(myArr.length);
     }
 
     //Returns true if this list contains no elements.
     public boolean isEmpty(){
-        return false;
+        if((myArr.length) == 0){
+            return true;
+        } else
+            return false;
     }
 
     //Returns true if this list contains the specified element
@@ -94,5 +127,13 @@ public class MyArrayList<T> {
         return false;
     }
 
+    @Override
+    public String toString(){
+        String value = "";
+        for(T t: myArr){
+            value = value + " ";
+        }
+        return value;
+    }
 
 }
