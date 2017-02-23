@@ -32,7 +32,7 @@ public class MyArrayListTest {
     }
 
     @Test
-    public void addTest(){
+    public void addTest() throws IndexOutOfBoundsException{
         String expected = "f";
         myArr.add("a");
         myArr.add("b");
@@ -45,7 +45,7 @@ public class MyArrayListTest {
     }
 
     @Test
-    public void addInsertElementAtIndexTest(){
+    public void addInsertElementAtIndexTest() throws IndexOutOfBoundsException {
         myArr.add("a");
         myArr.add("b");
         myArr.add("c");
@@ -56,8 +56,19 @@ public class MyArrayListTest {
         assertSame("Expected", "e", actual);
     }
 
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void addInsertElementAtIndexOutOfBoundsTest() throws IndexOutOfBoundsException{
+        myArr.add("a");
+        myArr.add("b");
+        myArr.add("c");
+        myArr.add("d");
+        myArr.add(10, "e");
+        String actual = myArr.get(-1);
+        assertSame("Expected", "e", actual);
+    }
+
     @Test
-    public void setTest(){
+    public void setTest() throws IndexOutOfBoundsException{
         myArr.add("a");
         myArr.add("b");
         myArr.add("c");
@@ -67,7 +78,7 @@ public class MyArrayListTest {
     }
 
     @Test
-    public void getTest(){
+    public void getTest() throws IndexOutOfBoundsException{
         String expected = "c";
         myArr.add("a");
         myArr.add("b");
@@ -78,7 +89,7 @@ public class MyArrayListTest {
     }
 
     @Test
-    public void isEmptyTest(){
+    public void isEmptyTest() throws IndexOutOfBoundsException{
         myArr.add("a");
         myArr.add("b");
         myArr.remove(1);
@@ -88,7 +99,7 @@ public class MyArrayListTest {
     }
 
     @Test
-    public void clearTest(){
+    public void clearTest() throws IndexOutOfBoundsException{
         myArr.add("a");
         myArr.add("b");
         myArr.add("c");
@@ -100,26 +111,35 @@ public class MyArrayListTest {
     }
 
     @Test
-    public void containsTest(){
+    public void containsTrueTest() throws IndexOutOfBoundsException{
         myArr.add("a");
         myArr.add("b");
         myArr.add("c");
         myArr.add("d");
         boolean expected = true;
-        myArr.contains("c");
-        System.out.println(myArr);
-        assertEquals("Expected equal", "c", myArr.contains("c"));
+        assertTrue(myArr.contains("c"));
     }
 
     @Test
-    public void removeTest(){
+    public void containsFalseTest() throws IndexOutOfBoundsException{
         myArr.add("a");
         myArr.add("b");
         myArr.add("c");
         myArr.add("d");
-        myArr.remove(2);
         boolean expected = false;
-        myArr.contains("c");
-        assertEquals("Expected equal", expected, myArr.contains("c"));
+        assertTrue(myArr.contains("f"));
+    }
+
+    @Test
+    public void removeTest() throws IndexOutOfBoundsException{
+        myArr.add("a");
+        myArr.add("b");
+        myArr.add("c");
+        myArr.add("d");
+        myArr.remove(1);
+        boolean expected = false;
+        String actual = myArr.get(3);
+        assertEquals("Expected", "c", actual);
+        //assertFalse(myArr.contains("c"));
     }
 }

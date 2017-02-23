@@ -31,7 +31,7 @@ public class MyArrayList<T> {
     }
 
     //Appends the specified element to the end of the list.
-    public void add(T element){
+    public void add(T element) throws IndexOutOfBoundsException {
         //Since Arrays cannot add an element, will need to copy the array into one that is
         // 1 size larger than the original array
 
@@ -49,7 +49,16 @@ public class MyArrayList<T> {
     }
 
     //Inserts the specified element at the specified position in this list.
-    public void add(int insertAtIndex, T elementToInsert) {
+    public void add(int insertAtIndex, T elementToInsert) throws IndexOutOfBoundsException {
+
+        try {
+            if(insertAtIndex < 0 || insertAtIndex > myArr.length){
+                throw new IndexOutOfBoundsException();
+            }
+        } catch (IndexOutOfBoundsException e){
+            e.sendMessage();
+            throw e;
+        }
 
         T[] finalArray = (T[]) new Object[myArr.length + 1];
 
@@ -73,7 +82,7 @@ public class MyArrayList<T> {
         for(int i=0; i<brokenRight.length;i++){
             add(brokenRight[i]);
         }
-        System.out.println(myArr.length); //5 after reconnecting arrays
+        System.out.println(myArr.length); //length is 5 after reconnecting arrays
     }
 
 
@@ -97,38 +106,40 @@ public class MyArrayList<T> {
     }
 
     //Removes the element at the specified location in the list
-    public void remove(int removalIndex){
+    public void remove(int removalIndex) throws IndexOutOfBoundsException{
 
-        //Can't figure this out so I tried this method from here:
-        // http://stackoverflow.com/questions/35880131/creating-an-array-list-from-scratch
+        T[] temp = (T[]) new Object[myArr.length-1];
+        T[] brokenLeft = breakLeftArray(myArr, removalIndex+1);
+        T[] brokenRight = breakRightArray(myArr, removalIndex);
+        myArr = brokenLeft;
 
-        if (removalIndex < 0 || removalIndex >= myArr.length) return;
-        T[] temp = (T[]) new Object[myArr.length - 1];
+        System.out.println("Before null "+myArr.length);
+        //create a new array, excluding the item that we want to remove
+        set(myArr.length-1, null);
+        System.out.println("After null "+myArr.length);
 
-        boolean found = false;
-        // copy everything over to the new element
-        for (int i = 0; i < myArr.length; i++)
-        {
-            // don't copy if the indices are the same
-            if (i == removalIndex)
-            {
-                found = true;
-                continue;
-            }
-            temp[i - (found ? 1 : 0)] = myArr[i];
+        //resize the array
+        for(int i=0; i<myArr.length-1;i++){
+            temp[i] = myArr[i];
         }
+
         myArr = temp;
+
+        for(int i=0; i<brokenRight.length;i++){
+            add(brokenRight[i]);
+        }
+        System.out.println("After rejoin "+myArr.length);
+
     }
 
     //Replaces the element at the specified position in this list with the specified element.
-    public void set(int indexLocation, T itemToReplace){
-
-        //Use a function accessible to Arrays (fill)
-        Arrays.fill(myArr, indexLocation, indexLocation+1, itemToReplace);
-        }
+    public void set(int indexLocation, T itemToReplace) {
+        //Use a function accessible to Arrays (fill), which will replace values in an array
+        Arrays.fill(myArr, indexLocation, indexLocation + 1, itemToReplace);
+    }
 
     //Removes all of the elements from this list.
-    public void clear(){
+    public void clear() throws IndexOutOfBoundsException{
         for(int i = 0; i < myArr.length; i++){
             remove(i);
         }
@@ -144,11 +155,12 @@ public class MyArrayList<T> {
     }
 
     //Returns true if this list contains the specified element
-    public boolean contains(T item){
-        if(myArr.equals(item)){
-            return true;
-        } else
-        return false;
+    public boolean contains(T item) {
+        for (int i = 0; i < myArr.length; i++) {
+            if (myArr[i].equals(item)) {
+                return true;
+            }
+        } return true;
     }
 
     @Override
