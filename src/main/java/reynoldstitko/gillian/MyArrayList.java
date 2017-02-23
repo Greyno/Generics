@@ -14,16 +14,19 @@ public class MyArrayList<T> {
 
     //Create a no-arg constructor
     public MyArrayList() {
+
         myArr = (T[]) new Object[0]; //create a new instance with a size of 1
     }
 
     //Create a one-arg constructor
     public MyArrayList(int startingIndex) {
+
         myArr = (T[]) new Object[startingIndex];
     }
 
     //Create another constructor
     public MyArrayList(T[] arr) {
+
         myArr = arr;
     }
 
@@ -43,7 +46,6 @@ public class MyArrayList<T> {
         //Add the element to the new array
         newArray[myArr.length] = element;
         myArr = newArray; //can now access the new, resized array through get methods
-
     }
 
     //Inserts the specified element at the specified position in this list.
@@ -51,21 +53,35 @@ public class MyArrayList<T> {
 
         T[] finalArray = (T[]) new Object[myArr.length + 1];
 
-
         //Break the array into two parts, using a function accessible to Arrays (copyOfRange)
 
         T[] brokenLeft = breakLeftArray(myArr, insertAtIndex);
+        T[] brokenRight = breakRightArray(myArr, insertAtIndex);
 
+        System.out.println(brokenRight.length);//2 - right copy
+
+        System.out.println(myArr.length); //4
+        //Set the left-most array to myArr
+        myArr = brokenLeft;
+        System.out.println(myArr.length); //2 - left copy after split
+
+        //Add the element of interest to the end of the left-most array (myArr)
         add(elementToInsert);
+        System.out.println(myArr.length); //3 - left copy after add an element
 
-        T[] brokenRight = breakRightArray(myArr, insertAtIndex+1);
-
-        //combine both arrays again
-
+        //combine both arrays again by adding elements from the right-most array to the end of the left-most array
+        for(int i=0; i<brokenRight.length;i++){
+            add(brokenRight[i]);
+        }
+        System.out.println(myArr.length); //5 after reconnecting arrays
     }
 
+
+    /*copyOfRange: startIndex is the initial index of the range to be copied, inclusive.
+    endIndex is the final index of the range to be copied, exclusive. (This index may lie outside the array) */
+
     private T[] breakLeftArray(T[] array, int atLocation){
-        T[] tempLeft = Arrays.copyOfRange(myArr, 0, atLocation-1);
+        T[] tempLeft = Arrays.copyOfRange(myArr, 0, atLocation);
         return tempLeft;
     }
 
@@ -76,6 +92,7 @@ public class MyArrayList<T> {
 
     //Returns the element at the specified position in this list
     public T get(int value){
+
         return myArr[value];
     }
 

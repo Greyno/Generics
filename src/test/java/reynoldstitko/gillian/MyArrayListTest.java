@@ -21,11 +21,13 @@ public class MyArrayListTest {
 
     @Test
     public void constructor1Test(){
+
         assertNotNull(myArr);
     }
 
     @Test
     public void constructor2Test(){
+
         assertFalse(myArr2.isEmpty());
     }
 
@@ -48,7 +50,7 @@ public class MyArrayListTest {
         myArr.add("b");
         myArr.add("c");
         myArr.add("d");
-        myArr.add(2, "e");
+        myArr.add(0, "e");
         System.out.println(myArr.toString());
         String actual = myArr.get(0);
         assertSame("Expected", "e", actual);
@@ -120,6 +122,4 @@ public class MyArrayListTest {
         myArr.contains("c");
         assertEquals("Expected equal", expected, myArr.contains("c"));
     }
-
-
 }
