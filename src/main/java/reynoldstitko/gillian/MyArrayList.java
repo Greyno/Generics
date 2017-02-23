@@ -1,6 +1,5 @@
 package reynoldstitko.gillian;
 
-
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Objects;
@@ -51,14 +50,7 @@ public class MyArrayList<T> {
     //Inserts the specified element at the specified position in this list.
     public void add(int insertAtIndex, T elementToInsert) throws IndexOutOfBoundsException {
 
-        try {
-            if(insertAtIndex < 0 || insertAtIndex > myArr.length){
-                throw new IndexOutOfBoundsException();
-            }
-        } catch (IndexOutOfBoundsException e){
-            e.sendMessage();
-            throw e;
-        }
+        checkIndexBoundaryConditions(insertAtIndex);
 
         //Break the array into two parts, using a function accessible to Arrays (copyOfRange)
         T[] brokenLeft = breakLeftArray(myArr, insertAtIndex);
@@ -73,6 +65,17 @@ public class MyArrayList<T> {
         //combine both arrays again by adding elements from the right-most array to the end of the left-most array
         for(int i=0; i<brokenRight.length;i++){
             add(brokenRight[i]);
+        }
+    }
+
+    private void checkIndexBoundaryConditions(int insertAtIndex) throws IndexOutOfBoundsException {
+        try {
+            if(insertAtIndex < 0 || insertAtIndex > myArr.length){
+                throw new IndexOutOfBoundsException();
+            }
+        } catch (IndexOutOfBoundsException e){
+            e.sendMessage();
+            throw e;
         }
     }
 
@@ -97,28 +100,40 @@ public class MyArrayList<T> {
     //Removes the element at the specified location in the list
     public void remove(int removalIndex) throws IndexOutOfBoundsException{
 
-        T[] temp = (T[]) new Object[myArr.length-1];
+        //Solved w/o using StackOverflow like before
+        checkIndexBoundaryConditions(removalIndex);
+
+        //Break the array at the point where we want to remove the element
         T[] brokenLeft = breakLeftArray(myArr, removalIndex+1);
-        T[] brokenRight = breakRightArray(myArr, removalIndex);
+        T[] brokenRight = breakRightArray(myArr, removalIndex+1);
         myArr = brokenLeft;
 
-        System.out.println("Before null "+myArr.length);
-        //create a new array, excluding the item that we want to remove
-        set(myArr.length-1, null);
-        System.out.println("After null "+myArr.length);
 
-        //resize the array
-        for(int i=0; i<myArr.length-1;i++){
-            temp[i] = myArr[i];
+        //If the removal value is at index 0, create an empty array,
+        // otherwise set the temporary array size to be 1 shorter than the broken left array
+        if(removalIndex == 0){
+            T[] temp = (T[]) new Object[0];
+            resizeTheArray(temp);
+            myArr = temp;
+        } else {
+            T[] temp = (T[]) new Object[myArr.length-1];
+            resizeTheArray(temp);
+            myArr = temp;
         }
 
-        myArr = temp;
 
         for(int i=0; i<brokenRight.length;i++){
             add(brokenRight[i]);
         }
         System.out.println("After rejoin "+myArr.length);
 
+    }
+
+    private void resizeTheArray(T[] arrayInput) {
+        for(int i=0; i<myArr.length-1;i++){
+            arrayInput[i] = myArr[i];
+            System.out.println(arrayInput[i]);
+        }
     }
 
     //Replaces the element at the specified position in this list with the specified element.

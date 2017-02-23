@@ -130,16 +130,29 @@ public class MyArrayListTest {
         assertTrue(myArr.contains("f"));
     }
 
-    @Test
-    public void removeTest() throws IndexOutOfBoundsException{
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void removeOutsideIndexTest() throws IndexOutOfBoundsException{
         myArr.add("a");
         myArr.add("b");
         myArr.add("c");
         myArr.add("d");
-        myArr.remove(1);
-        boolean expected = false;
-        String actual = myArr.get(3);
-        assertEquals("Expected", "c", actual);
-        //assertFalse(myArr.contains("c"));
+        myArr.add("e");
+        myArr.add("f");
+        myArr.remove(7);
+        String actual = myArr.get(4);
+        assertEquals("Expected", "f", actual);
+    }
+
+    @Test
+    public void removeWithinIndexTest() throws IndexOutOfBoundsException{
+        myArr.add("a");
+        myArr.add("b");
+        myArr.add("c");
+        myArr.add("d");
+        myArr.add("e");
+        myArr.add("f");
+        myArr.remove(0);
+        String actual = myArr.get(4);
+        assertEquals("Expected", "f", actual);
     }
 }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a7e6362f-19a3-416f-b723-849be42c81cb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/MyArrayList.java" afterPath="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/MyArrayList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/reynoldstitko/gillian/MyArrayListTest.java" afterPath="$PROJECT_DIR$/src/test/java/reynoldstitko/gillian/MyArrayListTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyArrayList.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyArrayList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/MyArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="62" column="93" lean-forward="false" selection-start-line="62" selection-start-column="93" selection-end-line="62" selection-end-column="93" />
+            <state relative-caret-position="-465">
+              <caret line="103" column="51" lean-forward="false" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyArrayListTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyArrayListTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/reynoldstitko/gillian/MyArrayListTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="140" column="37" lean-forward="true" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
+            <state relative-caret-position="615">
+              <caret line="132" column="53" lean-forward="false" selection-start-line="132" selection-start-column="53" selection-end-line="132" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,8 +90,8 @@
         <option value="$PROJECT_DIR$/src/test/java/reynoldstitko/gillian/MyArrayList.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/IndexOutOfBoundsException.java" />
-        <option value="$PROJECT_DIR$/src/test/java/reynoldstitko/gillian/MyArrayListTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/MyArrayList.java" />
+        <option value="$PROJECT_DIR$/src/test/java/reynoldstitko/gillian/MyArrayListTest.java" />
       </list>
     </option>
   </component>
@@ -223,7 +224,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
-  <component name="RunManager" selected="JUnit.MyArrayListTest.removeTest">
+  <component name="RunManager" selected="JUnit.MyArrayListTest.clearTest">
     <configuration default="false" name="MyArrayListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -250,84 +251,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MyArrayListTest.clearTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="reynoldstitko.gillian.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Generics" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="reynoldstitko.gillian" />
-      <option name="MAIN_CLASS_NAME" value="reynoldstitko.gillian.MyArrayListTest" />
-      <option name="METHOD_NAME" value="clearTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="MyArrayListTest.containsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="reynoldstitko.gillian.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Generics" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="reynoldstitko.gillian" />
-      <option name="MAIN_CLASS_NAME" value="reynoldstitko.gillian.MyArrayListTest" />
-      <option name="METHOD_NAME" value="containsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="MyArrayListTest.containsFalseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="reynoldstitko.gillian.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Generics" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="reynoldstitko.gillian" />
-      <option name="MAIN_CLASS_NAME" value="reynoldstitko.gillian.MyArrayListTest" />
-      <option name="METHOD_NAME" value="containsFalseTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="MyArrayListTest.removeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -341,6 +264,84 @@
       <option name="PACKAGE_NAME" value="reynoldstitko.gillian" />
       <option name="MAIN_CLASS_NAME" value="reynoldstitko.gillian.MyArrayListTest" />
       <option name="METHOD_NAME" value="removeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyArrayListTest.removeWithinIndexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="reynoldstitko.gillian.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Generics" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="reynoldstitko.gillian" />
+      <option name="MAIN_CLASS_NAME" value="reynoldstitko.gillian.MyArrayListTest" />
+      <option name="METHOD_NAME" value="removeWithinIndexTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyArrayListTest.removeOutsideIndexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="reynoldstitko.gillian.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Generics" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="reynoldstitko.gillian" />
+      <option name="MAIN_CLASS_NAME" value="reynoldstitko.gillian.MyArrayListTest" />
+      <option name="METHOD_NAME" value="removeOutsideIndexTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyArrayListTest.clearTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="reynoldstitko.gillian.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Generics" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="reynoldstitko.gillian" />
+      <option name="MAIN_CLASS_NAME" value="reynoldstitko.gillian.MyArrayListTest" />
+      <option name="METHOD_NAME" value="clearTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -736,18 +737,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.MyArrayListTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.clearTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.containsTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.containsFalseTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.removeTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.removeTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.removeWithinIndexTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.removeOutsideIndexTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.clearTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.removeTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.clearTest" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.MyArrayListTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.containsFalseTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.containsTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.clearTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.removeOutsideIndexTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.removeWithinIndexTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MyArrayListTest.removeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -762,44 +763,44 @@
       <option name="presentableId" value="Default" />
       <updated>1487790218351</updated>
       <workItem from="1487790221211" duration="17334000" />
-      <workItem from="1487846235905" duration="7199000" />
+      <workItem from="1487846235905" duration="9741000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 19m 35s.xml">
+    <history-entry file="MyArrayListTest - 2017.02.23 at 08h 18m 06s.xml">
+      <configuration name="MyArrayListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyArrayListTest - 2017.02.23 at 08h 19m 34s.xml">
+      <configuration name="MyArrayListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyArrayListTest_clearTest - 2017.02.23 at 08h 20m 08s.xml">
+      <configuration name="MyArrayListTest.clearTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyArrayListTest_removeOutsideIndexTest - 2017.02.23 at 08h 19m 21s.xml">
+      <configuration name="MyArrayListTest.removeOutsideIndexTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 08h 02m 11s.xml">
       <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 20m 56s.xml">
+    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 08h 10m 12s.xml">
       <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 21m 06s.xml">
+    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 08h 10m 23s.xml">
       <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 21m 22s.xml">
+    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 08h 10m 39s.xml">
       <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 21m 32s.xml">
+    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 08h 12m 41s.xml">
       <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 21m 42s.xml">
-      <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 21m 53s.xml">
-      <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 22m 08s.xml">
-      <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 34m 17s.xml">
-      <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyArrayListTest_removeTest - 2017.02.23 at 07h 34m 55s.xml">
-      <configuration name="MyArrayListTest.removeTest" configurationId="JUnit" />
+    <history-entry file="MyArrayListTest_removeWithinIndexTest - 2017.02.23 at 08h 18m 58s.xml">
+      <configuration name="MyArrayListTest.removeWithinIndexTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24533000" />
+    <option name="totallyTimeSpent" value="27075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
@@ -814,7 +815,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2296875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2921875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -900,20 +901,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/reynoldstitko/gillian/MyArrayListTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/MyArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="140" column="37" lean-forward="true" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
+        <state relative-caret-position="-465">
+          <caret line="103" column="51" lean-forward="false" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/MyArrayList.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/reynoldstitko/gillian/MyArrayListTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="62" column="93" lean-forward="false" selection-start-line="62" selection-start-column="93" selection-end-line="62" selection-end-column="93" />
+        <state relative-caret-position="615">
+          <caret line="132" column="53" lean-forward="false" selection-start-line="132" selection-start-column="53" selection-end-line="132" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
