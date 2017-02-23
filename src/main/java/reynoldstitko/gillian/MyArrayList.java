@@ -1,8 +1,6 @@
 package reynoldstitko.gillian;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
  * Created by gillianreynolds-titko on 2/22/17.
@@ -10,6 +8,10 @@ import java.util.Objects;
 public class MyArrayList<T> {
 
     private T[] myArr; //define a private variable
+
+    public T[] getMyArr() {
+        return myArr;
+    }
 
     //Create a no-arg constructor
     public MyArrayList() {
@@ -68,29 +70,6 @@ public class MyArrayList<T> {
         }
     }
 
-    private void checkIndexBoundaryConditions(int insertAtIndex) throws IndexOutOfBoundsException {
-        try {
-            if(insertAtIndex < 0 || insertAtIndex > myArr.length){
-                throw new IndexOutOfBoundsException();
-            }
-        } catch (IndexOutOfBoundsException e){
-            e.sendMessage();
-            throw e;
-        }
-    }
-
-    /*copyOfRange: startIndex is the initial index of the range to be copied, inclusive.
-    endIndex is the final index of the range to be copied, exclusive. (This index may lie outside the array) */
-    private T[] breakLeftArray(T[] array, int atLocation){
-        T[] tempLeft = Arrays.copyOfRange(myArr, 0, atLocation);
-        return tempLeft;
-    }
-
-    private T[] breakRightArray(T[] array, int atLocation){
-        T[] tempRight = Arrays.copyOfRange(myArr, atLocation, myArr.length);
-        return tempRight;
-    }
-
     //Returns the element at the specified position in this list
     public T get(int value){
 
@@ -128,12 +107,6 @@ public class MyArrayList<T> {
 
     }
 
-    private void resizeTheArray(T[] arrayInput) {
-        for(int i=0; i<myArr.length-1;i++){
-            arrayInput[i] = myArr[i];
-        }
-    }
-
     //Replaces the element at the specified position in this list with the specified element.
     public void set(int indexLocation, T itemToReplace) {
         //Use a function accessible to Arrays (fill), which will replace values in an array
@@ -142,9 +115,7 @@ public class MyArrayList<T> {
 
     //Removes all of the elements from this list.
     public void clear() throws IndexOutOfBoundsException{
-        for(int i = 0; i < myArr.length; i++){
-            remove(i);
-        }
+        myArr = (T[]) new Object[0];
     }
 
     //Returns true if this list contains no elements.
@@ -162,6 +133,38 @@ public class MyArrayList<T> {
                 return true;
             }
         } return true;
+    }
+
+    //-----Helper Methods--//
+    private void checkIndexBoundaryConditions(int insertAtIndex) throws IndexOutOfBoundsException {
+        try {
+            if(insertAtIndex < 0 || insertAtIndex > myArr.length){
+                throw new IndexOutOfBoundsException();
+            }
+        } catch (IndexOutOfBoundsException e){
+            e.sendMessage();
+            throw e;
+        }
+    }
+
+
+    /*copyOfRange: startIndex is the initial index of the range to be copied, inclusive.
+    endIndex is the final index of the range to be copied, exclusive. (This index may lie outside the array) */
+    private T[] breakLeftArray(T[] array, int atLocation){
+        T[] tempLeft = Arrays.copyOfRange(myArr, 0, atLocation);
+        return tempLeft;
+    }
+
+    private T[] breakRightArray(T[] array, int atLocation){
+        T[] tempRight = Arrays.copyOfRange(myArr, atLocation, myArr.length);
+        return tempRight;
+    }
+
+
+    private void resizeTheArray(T[] arrayInput) {
+        for(int i=0; i<myArr.length-1;i++){
+            arrayInput[i] = myArr[i];
+        }
     }
 
     @Override
