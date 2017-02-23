@@ -145,7 +145,6 @@ public class MyArrayList<T> {
         for(int i = 0; i < myArr.length; i++){
             remove(i);
         }
-        System.out.println(myArr.length);
     }
 
     //Returns true if this list contains no elements.
