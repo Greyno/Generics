@@ -125,14 +125,12 @@ public class MyArrayList<T> {
         for(int i=0; i<brokenRight.length;i++){
             add(brokenRight[i]);
         }
-        System.out.println("After rejoin "+myArr.length);
 
     }
 
     private void resizeTheArray(T[] arrayInput) {
         for(int i=0; i<myArr.length-1;i++){
             arrayInput[i] = myArr[i];
-            System.out.println(arrayInput[i]);
         }
     }
 
